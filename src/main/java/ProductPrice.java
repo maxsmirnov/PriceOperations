@@ -28,51 +28,63 @@ public class ProductPrice implements Comparable<ProductPrice> {
     @Override
     public int compareTo(ProductPrice price) {
         int result;
-
-//        result = productCode.compareTo(price.productCode);
-//        if(result != 0) return result;
-
         result = Integer.compare(Integer.parseInt(productCode), Integer.parseInt(price.productCode));
         if (result != 0) {
-
             return result;
         }
-
         result = Integer.compare(number, price.number);
-        if (result != 0) return result;
-
+        if (result != 0) {
+            return result;
+        }
         result = Integer.compare(depart, price.depart);
-        if (result != 0) return result;
-
+        if (result != 0) {
+            return result;
+        }
         result = begin.compareTo(price.begin);
-        if (result != 0) return result;
-
+        if (result != 0) {
+            return result;
+        }
         result = end.compareTo(price.end);
-        if (result != 0) return result;
-
+        if (result != 0) {
+            return result;
+        }
         result = Long.compare(value, price.value);
-        if (result != 0) return result;
-
-        // if(result == 0) return result;
-
-        return 0;
+        if (result != 0) {
+            return result;
+        }
+        return result;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ProductPrice)) return false;
-
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProductPrice)) {
+            return false;
+        }
         ProductPrice that = (ProductPrice) o;
-
-        if (depart != that.depart) return false;
-        if (id != that.id) return false;
-        if (number != that.number) return false;
-        if (value != that.value) return false;
-        if (!begin.equals(that.begin)) return false;
-        if (!end.equals(that.end)) return false;
-        if (!productCode.equals(that.productCode)) return false;
-
+        if (depart != that.depart) {
+            return false;
+        }
+        if (id != that.id) {
+            return false;
+        }
+        if (number != that.number) {
+            return false;
+        }
+        if (value != that.value) {
+            return false;
+        }
+        if (!begin.equals(that.begin)) {
+            return false;
+        }
+        if (!end.equals(that.end)) {
+            return false;
+        }
+        if (!productCode.equals(that.productCode)) {
+            return false;
+        }
         return true;
     }
 
@@ -89,39 +101,44 @@ public class ProductPrice implements Comparable<ProductPrice> {
     }
 
     public boolean equalPriceValues(ProductPrice price) {
-
         int result;
-
         result = Integer.compare(Integer.parseInt(productCode), Integer.parseInt(price.productCode));
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Integer.compare(number, price.number);
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Integer.compare(depart, price.depart);
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Long.compare(value, price.value);
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         return true;
     }
 
     public boolean equalNumberAndDepartment(ProductPrice price) {
-
         int result;
-
         result = Integer.compare(Integer.parseInt(productCode), Integer.parseInt(price.productCode));
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Integer.compare(number, price.number);
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Integer.compare(depart, price.depart);
-        if (result != 0) return false;
-
+        if (result != 0) {
+            return false;
+        }
         result = Long.compare(value, price.value);
-        if (result != 0) return true;
+        if (result != 0) {
+            return true;
+        }
         return true;
     }
 
